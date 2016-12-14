@@ -1,5 +1,3 @@
-
-
 class Board 
     attr_reader :board, :place
 
@@ -10,8 +8,12 @@ class Board
     end
 
     def show_board
-        @board.each_slice(3) { |x| puts x.join }
-    end
+        puts '-'*9          
+        @board.each_slice(3) { |x| 
+            puts x.join(' | ') 
+            puts '-'*9
+          }
+      end
 
     def get_place
         @place = gets.to_i - 1
@@ -77,10 +79,10 @@ new_board = Board.new
 
 
 until new_board.end_game
-    puts "Player 1 turn"
+    puts "Player 1 ('X') turn"
     new_board.put_marker(player_1.mark)
     if new_board.end_game != true
-        puts "Player 2 turn"
+        puts "Player 2 ('O') turn"
         new_board.put_marker(player_2.mark)
     end
 end
