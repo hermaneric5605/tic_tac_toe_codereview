@@ -3,7 +3,7 @@ class Board
 
     def initialize
         @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        puts "Player 1 is X, Player 2 is O."
+        puts "Welcome to Tic Tac Toe.  Please select a number to the corresponding box"
         show_board
     end
 
@@ -53,10 +53,10 @@ class Board
 
     def end_game
         if player1_win_condition == true
-            puts "Player 1 wins!"
+            puts "Player 1 ('X') wins!"
             exit
         elsif player2_win_condition == true
-            puts "Player 2 wins!" 
+            puts "Player 2 ('O') wins!" 
             exit
         elsif draw_condition == true && player1_win_condition == false && player2_win_condition == false
             puts "It's a draw!"
